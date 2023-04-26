@@ -14,22 +14,28 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+
+  it(`should have as result 10`,() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    expect(app.somar(5, 5)).toEqual(10);
+  })
 
-  it(`should have as title 'angular-testes'`, () => {
+  it(`should have as result 2`,() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-testes');
-  });
+    expect(app.somar(1, 1)).toEqual(2);
+  })
 
-  it('should render title', () => {
+  it(`should have as result 500`,() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-testes app is running!');
-  });
+    const app = fixture.componentInstance;
+    expect(app.calcularDesconto(1000, 50)).toEqual(500);
+  })
+
+  it('should have as result 3', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.minimoCaracteres('ele')).toEqual(3);
+  })
 });
