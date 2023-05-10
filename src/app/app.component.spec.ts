@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -13,7 +14,6 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
-
 
   it(`should have as result 10`,() => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -39,3 +39,18 @@ describe('AppComponent', () => {
     expect(app.minimoCaracteres('ele')).toEqual(3);
   })
 });
+
+describe('Matematica', () => {
+  it(`Matematica.somarValores() retornará 4`,() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.matematica.somarValores(1, 3)).toEqual(4);
+  })
+
+  it(`Matematica.getVapegarValorlue() retornará number`,() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.matematica.pegarValor()).toBeTruthy();
+  })
+})
+
