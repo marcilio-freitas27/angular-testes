@@ -1,4 +1,3 @@
-import { Matematica } from 'src/model/matematica';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,28 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  matematica: Matematica;
 
   constructor(){
-    this.matematica = new Matematica(10);
+
   }
 
   ngOnInit(){
 
   }
-
-  somar(primeiroValor: number, segundoValor: number):number {
-    return primeiroValor + segundoValor;
-  }
-
-  calcularDesconto(valor: number, desconto: number): number {
-    let retornaDesconto = desconto / 100;
-    return valor * retornaDesconto;
-  }
-
-  minimoCaracteres(texto: string): number {
-    return texto.length;
-  }
-
 
 }
